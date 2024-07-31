@@ -1,12 +1,12 @@
 # 📖 Introduction
 
-OmAgent is a...
+> OmAgent is a LLMs(Large Language Models) powered framework for solving complicated AI tasks. 
 
-OmAgent can be simplified into several parts:
-
-- `Engine`: 
-- `omagent-core`: 
-- `workflows`: 
+OmAgent supplys a more universal simplified module for tasks in different domains, streamlining the application of Agents across various fields.:
+> 
+> - `Omagent-core` : Base abstractions and OmAgent Expression Language.
+> - `Engine` : `Engine` is an extension of  `Omagent-core` aimed at endowing OmAgent with different capacities in additional to general task, like **Complex Visual Reasoning Tasks**, **Video Understanding, Visual Generation & Editing.**  It will contain customized ****definitions based on the class of ****`Omagent-core` .
+> - `Workflows` : Define the customized llm, node, loop, tool information for personalized task.
 
 # Opensource libraries
 
