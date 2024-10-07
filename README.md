@@ -41,11 +41,30 @@ Run `npx serve .` (Node.js users) or `python -m http.server 8000` (Python users)
 
 To learn more about using Docsify, visit https://docsify.js.org.
 
+## PartA
+| Number of Processes / Cores | Sequential | SIMD (AVX2) | MPI | Pthread | OpenMP | CUDA | OpenACC |
+|-----------------------------|------------|-------------|-----|---------|--------|------|---------|
+| 1                           | 627        | 409         | 627 | 705     | 586    | 35.3022   | 36      |
+| 2                           | N/A        | N/A         | 769 | 638     | 586    | N/A  | N/A     |
+| 4                           | N/A        | N/A         | 481 | 340     | 438    | N/A  | N/A     |
+| 8                           | N/A        | N/A         | 344 | 180     | 306    | N/A  | N/A     |
+| 16                          | N/A        | N/A         | 278 | 99     | 205    | N/A  | N/A     |
+| 32                          | N/A        | N/A         | 274 | 76      | 143    | N/A  | N/A     |
+
+## PartB
+| Number of Processes / Cores | Sequential | SIMD (AVX2) | MPI  | Pthread | OpenMP | CUDA | OpenACC |
+|-----------------------------|------------|-------------|------|---------|--------|------|---------|
+| 1                           | 6642       | 4239        | 7222 | 8036    | 8468   | 31.1593   | 23      |
+| 2                           | N/A        | N/A         | 7081 | 7217    | 7296   | N/A  | N/A     |
+| 4                           | N/A        | N/A         | 3734 | 3825    | 3938   | N/A  | N/A     |
+| 8                           | N/A        | N/A         | 2076 | 1829    | 1893   | N/A  | N/A     |
+| 16                          | N/A        | N/A         | 1057 | 950     | 965   | N/A  | N/A     |
+| 32                          | N/A        | N/A         | 655  | 564     | 588    | N/A  | N/A     |
 
 
 
 
-
+## PartC
 | Number of Processes / Cores | Sequential (SOA，-O2) |  SIMD (AVX2, -O2) | MPI (-O2)  | Pthread (-O2) | OpenMP (-O2) | CUDA | OpenACC |
 |-----------------------------|------------------|-------------------|------------|---------------|--------------|------|---------|
 | 1                           | 1             | 1.058              | 1.006       | 1.004          | 1.007         | 0.002 | 0.001      |
