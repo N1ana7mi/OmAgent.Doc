@@ -40,3 +40,17 @@ Run `npx serve .` (Node.js users) or `python -m http.server 8000` (Python users)
 ## Docsify Documentation
 
 To learn more about using Docsify, visit https://docsify.js.org.
+
+
+
+
+
+
+| Number of Processes / Cores | Sequential (-O2) |  SIMD (AVX2, -O2) | MPI (-O2)  | Pthread (-O2) | OpenMP (-O2) | CUDA | OpenACC |
+|-----------------------------|------------------|-------------------|------------|---------------|--------------|------|---------|
+| 1                           | 3745             | 3856              | 3670       | 3663          | 3673         | 9.70861 | 5      |
+| 2                           | N/A              | N/A               | 2840       | 2799          | 2785         | N/A  | N/A     |
+| 4                           | N/A              | N/A               | 1431       | 1450          | 1455         | N/A  | N/A     |
+| 8                           | N/A              | N/A               | 723        | 857           | 731          | N/A  | N/A     |
+| 16                          | N/A              | N/A               | 360        | 377           | 453          | N/A  | N/A     |
+| 32                          | N/A              | N/A               | 185        | 264           | 265          | N/A  | N/A     |
