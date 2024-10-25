@@ -42,14 +42,14 @@ Run `npx serve .` (Node.js users) or `python -m http.server 8000` (Python users)
 To learn more about using Docsify, visit https://docsify.js.org.
 
 ## PartA
-| Number of Processes / Cores | Sequential | SIMD (AVX2) | MPI | Pthread | OpenMP | CUDA | OpenACC |
-|-----------------------------|------------|-------------|-----|---------|--------|------|---------|
-| 1                           | 627        | 409         | 627 | 705     | 586    | 35.3022   | 36      |
-| 2                           | N/A        | N/A         | 769 | 638     | 586    | N/A  | N/A     |
-| 4                           | N/A        | N/A         | 481 | 340     | 438    | N/A  | N/A     |
-| 8                           | N/A        | N/A         | 344 | 180     | 306    | N/A  | N/A     |
-| 16                          | N/A        | N/A         | 278 | 99     | 205    | N/A  | N/A     |
-| 32                          | N/A        | N/A         | 274 | 76      | 143    | N/A  | N/A     |
+| Methods | Matrices 1024*1024 | Speed up |
+|-----------------------------|------------|-------------|
+| Naive                           | 8226        | 1        |
+| Memory Locality                           | 810        | 0.0984         |
+| SIMD + Memory Locality                           | 276        | 0.0335         | 
+| OpenMP + SIMD + Memory Locality (32 threads)                           | 49        | 0.0060         | 
+| MPI + OpenMP + SIMD + Memory Locality (total 32 threads)                          | 40        | 0.0048         | 
+
 
 ## PartB
 | Number of Processes / Cores | Sequential | SIMD (AVX2) | MPI  | Pthread | OpenMP | CUDA | OpenACC |
