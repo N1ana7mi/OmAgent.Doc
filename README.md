@@ -41,15 +41,22 @@ Run `npx serve .` (Node.js users) or `python -m http.server 8000` (Python users)
 
 To learn more about using Docsify, visit https://docsify.js.org.
 
-## PartA
-| Methods | Matrices 1024*1024 | Speed up |
-|-----------------------------|------------|-------------|
-| Naive                           | 8226        | 1        |
-| Memory Locality                           | 810        | 0.0984         |
-| SIMD + Memory Locality                           | 276        | 0.0335         | 
-| OpenMP + SIMD + Memory Locality (32 threads)                           | 49        | 0.0060         | 
-| MPI + OpenMP + SIMD + Memory Locality (total 32 threads)                          | 40        | 0.0048         | 
+## Training two layer neural network 400 hidden units
 
+| Epoch | Acc Rate | Training Time (Sequential (Optimized with -O2))| Training Time (OpenACC kernel)| Training Time (OpenACC fusion) |
+|-------|----------|---------------|---------------|---------------|
+|     1 |   92.330%  |  47273 ms  |   8353 ms  |   4878 ms  | 
+|     2 |   93.960%  | 47278 ms  |   7148 ms  |   4770 ms  | 
+|     3 |   94.980%  | 47278 ms  |   7164 ms  |   4777 ms  | 
+|     4 |   95.720%  | 47266 ms  |   7196 ms  |   4827 ms  | 
+|     5 |   96.320%  | 47200 ms  |   7211 ms  |   4839 ms  |
+|     6 |   96.560%  | 47257 ms  |   7245 ms  |   4867 ms  |  
+|     7 |   96.880%  | 47212 ms  |   7245 ms  |   4869 ms  | 
+|     8 |   97.110%  | 47231 ms  |   7296 ms  |   4911 ms  | 
+|     9 |   97.280%  | 47247 ms  |   7317 ms  |   4923 ms  | 
+|    10 |   97.410%  |  47193 ms  |   7320 ms  |   4924 ms  | 
+| Total Execution Time: |  / | 517873ms   |   75654 ms  |   50547 ms   |    
+| Speed up (Sequential base) |    /  |  1  | 0.146  |  0.097  |
 
 ## PartB
 | Number of Processes / Cores | Sequential | SIMD (AVX2) | MPI  | Pthread | OpenMP | CUDA | OpenACC |
